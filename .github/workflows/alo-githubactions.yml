@@ -1,0 +1,20 @@
+name: Exemplo de fluxo de trabalho
+
+#definido o nome devemos definir qual o evento/gatilho para inicia-lo
+on:
+  #informando que a ativação vai ser manual:
+  workflow_dispatch: 
+
+jobs:
+  #defina o nome do Job:
+  acao_inicial_job: 
+    #definindo runner do job (podemos usar as opções do Git ou cirar um container e lincar com o actions) :
+    #para veficar quais os ambientes disponíveis no Git e suas expecificações: https://docs.github.com/pt/actions/using-github-hosted-runners/about-github-hosted-runners
+    runs-on: ubuntu-latest
+    steps:
+      #cada passo começa por "- nomePasso"
+      - name: Imprimir Ola
+      #nesse ponto podemos defiir um comando ou ação para ser executada
+        run: echo "ola"
+      - name: Imprimir Tchau
+        run: echo "Tchau"
